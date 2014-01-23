@@ -11,20 +11,18 @@
 # >> fizzbuzz(8)
 # => 8
 def fizzbuzz(count)
-  if count % 3 == 0 and count % 5 == 0
-    'fizzbuzz'
-  elsif count % 3 == 0
-    'fizz'
-  elsif count % 5 == 0
-    'buzz'
-  else
-    count
+  result = ''
+  result << 'fizz' if count % 3 == 0
+  result << 'buzz' if count % 5 == 0
+  result.empty? ? count : result
+end
+
+if __FILE__ == $PROGRAM_NAME
+  (-15).upto 15 do |number|
+    puts fizzbuzz number
   end
 end
 
-(-15).upto 15 do |number|
-  puts fizzbuzz number
-end
 # The ternary operator
 # ?: if you were to search somewhere like SymbolHound.com
 # It is a modified if statement.
